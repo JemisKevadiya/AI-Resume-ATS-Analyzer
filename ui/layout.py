@@ -24,13 +24,20 @@ def setup_page():
         """
 Upload your **Resume** and compare it with the **Job Description**
 using **Google Gemini AI**.
-
-### Available Features
-
-- 📄 Resume Review                - 💼 Interview Questions
-- 🖋 Rewrite Resume                - 📝 Cover Letter Generator
-- 🎯 ATS Match Score              - 📚 Missing Skills
-- ✨ Improve Resume
-
 """
+    )
+
+    # Push footer to bottom
+    st.markdown("", unsafe_allow_html=True)
+
+    # Footer
+    st.markdown(
+        """
+        <hr>
+        <div style="text-align:center; color:gray; font-size:14px;">
+            👨‍💻 Developed with ❤️ by <b>Jemis Kevadiya</b><br>
+            © 2026 AI Resume ATS Analyzer. All Rights Reserved.
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
