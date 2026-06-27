@@ -22,30 +22,15 @@ def setup_page():
 
     st.markdown(
         """
-### 🤖 AI-Powered Resume Screening Platform
-
 Upload your **Resume** and compare it with the **Job Description**
 using **Google Gemini AI**.
 
----
+### Available Features
 
-### 🚀 Available Features
-
-- 📄 Resume Review
-- 🎯 ATS Match Score
+- 📄 Resume Review                - 💼 Interview Questions
+- 🖋 Rewrite Resume                - 📝 Cover Letter Generator
+- 🎯 ATS Match Score              - 📚 Missing Skills
 - ✨ Improve Resume
-- 📚 Missing Skills
-- 💼 Interview Questions
-- 📝 AI Cover Letter Generator
-- 🖋 Rewrite Resume
 
----
-
-👨‍💻 **Developed by:** **Jemis Kevadiya**
-
-🎓 B.Tech Artificial Intelligence & Data Science
-
-💡 Passionate about AI • Machine Learning • NLP • Generative AI
 """
     )
-
