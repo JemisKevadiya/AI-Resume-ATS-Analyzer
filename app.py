@@ -1,6 +1,6 @@
 import streamlit as st
 
-# Load configuration (this configures Gemini API)
+# Configuration
 from config import settings
 
 # UI
@@ -21,19 +21,18 @@ from prompts import (
     REWRITE_PROMPT,
 )
 
-
-# -------------------------------
+# -----------------------------------
 # Page Setup
-# -------------------------------
+# -----------------------------------
 setup_page()
 
-
-# -------------------------------
-# User Inputs
-# -------------------------------
+# -----------------------------------
+# User Input
+# -----------------------------------
 job_description = st.text_area(
     "📋 Paste Job Description",
-    height=220
+    height=220,
+    placeholder="Paste the complete Job Description here..."
 )
 
 uploaded_file = st.file_uploader(
@@ -42,12 +41,11 @@ uploaded_file = st.file_uploader(
 )
 
 if uploaded_file:
-    st.success("✅ Resume Uploaded Successfully")
+    st.success("✅ Resume uploaded successfully.")
 
-
-# -------------------------------
+# -----------------------------------
 # Buttons
-# -------------------------------
+# -----------------------------------
 (
     review_btn,
     ats_btn,
@@ -58,38 +56,37 @@ if uploaded_file:
     rewrite_btn,
 ) = create_buttons()
 
-
-# -------------------------------
-# Helper Function
-# -------------------------------
+# -----------------------------------
+# Common Function
+# -----------------------------------
 def process_request(prompt, title):
-    """
-    Common function for all buttons.
-    """
 
     if uploaded_file is None:
-        st.warning("⚠ Please upload your Resume.")
+        st.warning("⚠ Please upload your resume.")
         return
 
     if job_description.strip() == "":
         st.warning("⚠ Please paste the Job Description.")
         return
 
-    with st.spinner("Analyzing Resume..."):
+    with st.spinner("🤖 Gemini AI is analyzing your resume..."):
 
-        response = analyze_resume(
-            uploaded_file,
-            job_description,
-            prompt
-        )
+        try:
+            response = analyze_resume(
+                uploaded_file,
+                job_description,
+                prompt
+            )
 
-    st.subheader(title)
-    st.write(response)
+            st.subheader(title)
+            st.write(response)
 
+        except Exception as e:
+            st.error(f"❌ {e}")
 
-# -------------------------------
+# -----------------------------------
 # Button Actions
-# -------------------------------
+# -----------------------------------
 
 if review_btn:
     process_request(
@@ -132,3 +129,9 @@ if rewrite_btn:
         REWRITE_PROMPT,
         "🖋 Rewritten Resume"
     )
+
+# -----------------------------------
+# Footer
+# -----------------------------------
+st.markdown("---")
+st.caption("📄 AI Resume ATS Analyzer | Powered by Google Gemini AI | Built with Streamlit")
