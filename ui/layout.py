@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 
 from config.settings import (
@@ -49,4 +48,4 @@ using **Google Gemini AI**.
 💡 Passionate about AI • Machine Learning • NLP • Generative AI
 """
     )
-```
+
