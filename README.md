@@ -66,6 +66,14 @@ Analyze your resume against any job description, calculate ATS compatibility, id
 
 ---
 
+## 💼 AI Interview Questions
+
+<p align="center">
+<img src="screenshots/interview Questions.png" width="100%">
+</p>
+
+---
+
 # 🏗 Project Structure
 
 ```text
