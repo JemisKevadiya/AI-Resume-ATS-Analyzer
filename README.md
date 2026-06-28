@@ -34,6 +34,14 @@ Analyze your resume against any job description, calculate ATS compatibility, id
 
 # 📸 Application Screenshots
 
+## 🎥 Application Demo
+
+<p align="center">
+  <video src="screenshots/demo.mp4" controls width="100%"></video>
+</p>
+
+---
+
 ## 🏠 Home Page
 
 <p align="center">
